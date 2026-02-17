@@ -59,14 +59,14 @@ export default [
       parser: tsParser,
     },
     plugins: {
-      custom: {
+      '@mckabue': {
         rules: {
           'no-same-type-params': noSameTypeParams,
         },
       },
     },
     rules: {
-      'custom/no-same-type-params': 'warn',
+      '@mckabue/no-same-type-params': 'warn',
     },
   },
 ];
@@ -76,9 +76,9 @@ export default [
 
 ```json
 {
-  "plugins": ["custom"],
+  "plugins": ["@mckabue"],
   "rules": {
-    "custom/no-same-type-params": "warn"
+    "@mckabue/no-same-type-params": "warn"
   }
 }
 ```
