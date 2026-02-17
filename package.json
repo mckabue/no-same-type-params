@@ -1,6 +1,6 @@
 {
   "name": "@mckabue/no-same-type-params",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "ESLint rule that disallows consecutive function parameters sharing the same type annotation. Encourages refactoring to object parameters.",
   "keywords": [
     "eslint",
