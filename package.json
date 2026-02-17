@@ -1,0 +1,63 @@
+{
+  "name": "@mckabue/no-same-type-params",
+  "version": "1.0.0",
+  "description": "ESLint rule that disallows consecutive function parameters sharing the same type annotation. Encourages refactoring to object parameters.",
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin",
+    "eslint-rule",
+    "typescript",
+    "parameters",
+    "code-quality",
+    "refactoring"
+  ],
+  "author": "Kabui Charles",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mckabue/no-same-type-params.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mckabue/no-same-type-params/issues"
+  },
+  "homepage": "https://github.com/mckabue/no-same-type-params#readme",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "vite build",
+    "clean": "rm -rf dist",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "type-check": "tsc --noEmit",
+    "prepublishOnly": "npm run clean && npm run build && npm test"
+  },
+  "peerDependencies": {
+    "eslint": ">=8.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@typescript-eslint/parser": "^8.48.0",
+    "eslint": "^9.39.1",
+    "jest": "^29.7.0",
+    "terser": "^5.44.0",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.0",
+    "vite-plugin-dts": "^3.6.0"
+  }
+}
