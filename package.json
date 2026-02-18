@@ -44,7 +44,7 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "type-check": "tsc --noEmit",
-    "prepublishOnly": "npm run clean && npm run build && npm test"
+    "prepublishOnly": "pnpm clean && pnpm build && pnpm test"
   },
   "peerDependencies": {
     "eslint": ">=8.0.0"
