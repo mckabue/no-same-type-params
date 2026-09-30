@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any -- the rule inspects untyped TSESTree visitor nodes */
+
 /**
  * ESLint rule: no-same-type-params
  *
