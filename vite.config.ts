@@ -1,31 +1,31 @@
-import { defineConfig } from "vite";
-import { resolve } from "path";
-import dts from "vite-plugin-dts";
+import { defineConfig } from 'vite'
+import { resolve } from 'path'
+import dts from 'vite-plugin-dts'
 
 export default defineConfig({
   build: {
     lib: {
-      entry: resolve(__dirname, "src/index.ts"),
-      name: "NoSameTypeParams",
-      formats: ["es", "cjs"],
+      entry: resolve(__dirname, 'src/index.ts'),
+      name: 'NoSameTypeParams',
+      formats: ['es', 'cjs'],
       fileName: (format: string) =>
-        `index.${format === "es" ? "esm" : format}.js`,
+        `index.${format === 'es' ? 'esm' : format}.js`,
     },
     rollupOptions: {
-      external: ["eslint"],
+      external: ['eslint'],
       output: {
         globals: {
-          eslint: "eslint",
+          eslint: 'eslint',
         },
       },
     },
     sourcemap: true,
-    minify: "terser",
+    minify: 'terser',
   },
   plugins: [
     dts({
       bundleTypes: true,
-      tsconfigPath: "./tsconfig.json",
+      tsconfigPath: './tsconfig.json',
     }),
   ],
-});
+})

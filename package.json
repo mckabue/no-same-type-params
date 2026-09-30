@@ -1,6 +1,6 @@
 {
   "name": "@mckabue/no-same-type-params",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "ESLint rule that disallows consecutive function parameters sharing the same type annotation. Encourages refactoring to object parameters.",
   "keywords": [
     "eslint",
@@ -22,7 +22,7 @@
     "url": "https://github.com/mckabue/no-same-type-params/issues"
   },
   "homepage": "https://github.com/mckabue/no-same-type-params#readme",
-  "main": "dist/index.js",
+  "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -34,7 +34,7 @@
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.esm.js",
-      "require": "./dist/index.js"
+      "require": "./dist/index.cjs.js"
     }
   },
   "scripts": {
@@ -45,19 +45,26 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "type-check": "tsc --noEmit",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "format": "prettier --write src vite.config.ts jest.config.cjs eslint.config.mjs package.json",
     "prepublishOnly": "npm run clean && npm run build && npm test"
   },
   "peerDependencies": {
     "eslint": ">=8.0.0"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@types/jest": "^30.0.0",
     "@typescript-eslint/parser": "^8.57.2",
     "eslint": "^10.1.0",
+    "globals": "^17.4.0",
     "jest": "^30.5.1",
+    "prettier": "^3.9.6",
     "terser": "^5.46.1",
     "ts-jest": "^29.4.6",
     "typescript": "^6.0.2",
+    "typescript-eslint": "^8.57.2",
     "vite": "^8.0.3",
     "vite-plugin-dts": "^5.1.0"
   }

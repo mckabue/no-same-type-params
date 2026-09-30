@@ -30,7 +30,10 @@ const getTypeAnnotation = (param: any): any => {
     return param.typeAnnotation.typeAnnotation
   }
   // AssignmentPattern: (a: string = 'default')
-  if (param.type === 'AssignmentPattern' && param.left?.typeAnnotation?.typeAnnotation) {
+  if (
+    param.type === 'AssignmentPattern' &&
+    param.left?.typeAnnotation?.typeAnnotation
+  ) {
     return param.left.typeAnnotation.typeAnnotation
   }
   return undefined
@@ -40,7 +43,8 @@ const noSameTypeParams = {
   meta: {
     type: 'suggestion' as const,
     docs: {
-      description: 'Disallow consecutive function parameters with the same type annotation',
+      description:
+        'Disallow consecutive function parameters with the same type annotation',
     },
     schema: [],
     messages: {
@@ -79,9 +83,15 @@ const noSameTypeParams = {
     }
 
     return {
-      FunctionDeclaration(node: any) { checkParams(node.params) },
-      FunctionExpression(node: any) { checkParams(node.params) },
-      ArrowFunctionExpression(node: any) { checkParams(node.params) },
+      FunctionDeclaration(node: any) {
+        checkParams(node.params)
+      },
+      FunctionExpression(node: any) {
+        checkParams(node.params)
+      },
+      ArrowFunctionExpression(node: any) {
+        checkParams(node.params)
+      },
     }
   },
 }
