@@ -14,6 +14,7 @@
   ],
   "author": "Kabui Charles",
   "license": "MIT",
+  "packageManager": "npm@11.8.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mckabue/no-same-type-params.git"
