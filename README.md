@@ -40,7 +40,7 @@ pnpm add @mckabue/no-same-type-params --save-dev
 ```
 
 **Peer Dependencies:**
-- `eslint`: >=8.0.0
+- `eslint`: >=8.40.0 (the rule reads `context.sourceCode`)
 
 You'll also need `@typescript-eslint/parser` for TypeScript support.
 
